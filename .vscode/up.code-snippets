@@ -1,0 +1,10 @@
+{
+    "up": {
+        "prefix": "up",
+        "body": [
+            "use crate::prelude::*;",
+            "$1"
+        ],
+        "description": "adds use crate::prelude::*;"
+    }
+}
