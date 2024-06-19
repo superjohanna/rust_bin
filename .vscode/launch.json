@@ -7,11 +7,14 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug Client",
+            "name": "Debug",
             "program": "${workspaceFolder}/target/debug/${workspaceRootFolderName}",
             "args": [],
             "cwd": "${workspaceFolder}",
-            "preLaunchTask": "cargo build"
+            "preLaunchTask": "cargo build",
+            "env": {
+                "CARGO_MANIFEST_DIR": "${workspaceFolder}",
+            }
         },
     ]
 }

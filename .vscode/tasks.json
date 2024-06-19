@@ -4,7 +4,7 @@
         {
             "type": "shell",
             "label": "cargo build",
-            "command": "cargo build",
+            "command": "cargo build -F debug",
             "problemMatcher": [
                 "$rustc"
             ],

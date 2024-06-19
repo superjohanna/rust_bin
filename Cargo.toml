@@ -1,10 +1,37 @@
+[workspace]
+members = ["minesweeper"]
+resolver = "2"
+
 [package]
-name = "{{project-name}}"
+name = "game_collection"
+version.workspace = true
+edition.workspace = true
+
+
+[dependencies]
+bevy.workspace = true
+bevy-inspector-egui = { version = "0.24.0", "optional" = true }
+thiserror.workspace = true
+minesweeper = { path = "./minesweeper/" }
+
+[features]
+default = []
+debug = [ "bevy-inspector-egui", "minesweeper/debug" ]
+
+[workspace.package]
 version = "0.1.0"
 edition = "2021"
-authors = ["{{}}"]
+authors = ["Johanna Wehner"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
-[dependencies]
+[workspace.dependencies]
+bevy = "0.13.2"
 thiserror = "1.0.58"
+
+[workspace.lints.rust]
+
+[profile.dev]
+opt-level = 1
+package."*".opt-level = 3
+incremental = true
